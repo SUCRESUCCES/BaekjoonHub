@@ -1,14 +1,11 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-public class Main{
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-
-        String id = sc.nextLine();
-        if(id.length() <= 50 && id.matches("[a-z]+")){
-            System.out.println(id + "??!");
-        }else{
-            System.out.println("입력 조건이 맞지않습니다.");
-        }
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String id = br.readLine();
+        System.out.println(id + "??!");
     }
 }
