@@ -9,9 +9,8 @@ let input = [];
 rl.on('line', function (line) {
     input = [line];
 }).on('close',function(){
-    str = input[0];
-    let strArr = str.split('');
-    strArr.forEach(function(result){
+    str = input[0].split('');
+    str.forEach(function(result){
         console.log(result);
         
 });
