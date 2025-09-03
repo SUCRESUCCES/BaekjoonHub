@@ -1,20 +1,13 @@
+// 1. operations 객체 정의
+const operations = {
+  w: (n) => n + 1,
+  s: (n) => n - 1,
+  d: (n) => n + 10,
+  a: (n) => n - 10,
+};
+
+// 2. solution 함수 정의
 function solution(n, control) {
-    let answer = n;
-    for(const char of control){
-        switch(char){
-            case "w" : 
-                answer += 1;
-                break;
-            case "s" :
-                answer -= 1;
-                break;
-            case "d" :
-                answer += 10;
-                break;
-            case "a" :
-                answer -= 10;
-                break;
-        }
-    }
-    return answer;
+  // 3. 스프레드 문법과 reduce 메서드 활용
+  return [...control].reduce((prev, op) => operations[op](prev), n);
 }
